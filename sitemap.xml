@@ -9,11 +9,7 @@
          <lastmod>2024-11-06</lastmod>
     </url>
     <url>
-         <loc>https://github.com/Engenere/BrazilFiscalReport/code_generator/</loc>
-         <lastmod>2024-11-06</lastmod>
-    </url>
-    <url>
-         <loc>https://github.com/Engenere/BrazilFiscalReport/dacce/</loc>
+         <loc>https://github.com/Engenere/BrazilFiscalReport/cli_usage/</loc>
          <lastmod>2024-11-06</lastmod>
     </url>
     <url>
@@ -22,6 +18,10 @@
     </url>
     <url>
          <loc>https://github.com/Engenere/BrazilFiscalReport/danfe/</loc>
+         <lastmod>2024-11-06</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/Engenere/BrazilFiscalReport/using_python_code/</loc>
          <lastmod>2024-11-06</lastmod>
     </url>
 </urlset>

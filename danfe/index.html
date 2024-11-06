@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://github.com/Engenere/BrazilFiscalReport/danfe/">
       
       
-        <link rel="prev" href="../code_generator/">
+        <link rel="prev" href="../cli_usage/">
       
       
         <link rel="next" href="../dacte/">
@@ -196,12 +196,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../code_generator/" class="md-tabs__link">
+      <a href="../cli_usage/" class="md-tabs__link">
         
   
     
   
-  Code Generator
+  CLI Usage
 
       </a>
     </li>
@@ -249,12 +249,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../dacce/" class="md-tabs__link">
+      <a href="../using_python_code/" class="md-tabs__link">
         
   
     
   
-  DACCe
+  Using in Python Code
 
       </a>
     </li>
@@ -337,11 +337,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../code_generator/" class="md-nav__link">
+      <a href="../cli_usage/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Code Generator
+    CLI Usage
   </span>
   
 
@@ -417,15 +417,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#example-usage-with-full-customization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Usage with Full Customization 🎨
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -466,11 +457,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../dacce/" class="md-nav__link">
+      <a href="../using_python_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    DACCe
+    Using in Python Code
   </span>
   
 
@@ -537,15 +528,6 @@
   <a href="#configuration-options" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration Options ⚙️
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-usage-with-full-customization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Usage with Full Customization 🎨
     </span>
   </a>
   
@@ -667,41 +649,6 @@
 <li><strong>Default</strong>: <code>False</code></li>
 </ul>
 <hr />
-<h3 id="example-usage-with-full-customization">Example Usage with Full Customization 🎨</h3>
-<p>Here’s how you can set up a <code>DanfeConfig</code> object with a full set of customizations:</p>
-<pre><code class="language-python">from brazilfiscalreport.danfe import (
-    Danfe,
-    DanfeConfig,
-    DecimalConfig,
-    FontType,
-    InvoiceDisplay,
-    Margins,
-    ReceiptPosition,
-    TaxConfiguration,
-)
-
-# Path to the XML file
-xml_file_path = 'nfe.xml'
-
-# Load XML Content
-with open(xml_file_path, &quot;r&quot;, encoding=&quot;utf8&quot;) as file:
-    xml_content = file.read()
-
-# Create a configuration instance
-config = DanfeConfig(
-    logo='path/to/logo.png',
-    margins=Margins(top=10, right=10, bottom=10, left=10),
-    receipt_pos=ReceiptPosition.BOTTOM,
-    decimal_config=DecimalConfig(price_precision=2, quantity_precision=2),
-    tax_configuration=TaxConfiguration.ICMS_ST_ONLY,
-    invoice_display=InvoiceDisplay.FULL_DETAILS,
-    font_type=FontType.TIMES
-)
-
-# Use this config when creating a Danfe instance
-danfe = Danfe(xml_content, config=config)
-danfe.output('output_danfe.pdf')
-</code></pre>
 
 
 
