@@ -340,14 +340,19 @@ class Damdfe(xFPDF):
         qr_code = extract_text(self.inf_mdfe_supl, "qrCodMDFe")
 
         num_x = 140
-        num_y = 3
-        num_w = 28
-        num_h = 28
-        draw_qr_code(self, qr_code, 0, num_x, num_y, num_w, num_h)
+        num_y = 4
+        draw_qr_code(self, qr_code, 0, num_x, num_y, box_size=25, border=3)
 
         svg_img_bytes = BytesIO()
-        Code128(self.key_mdfe, writer=SVGWriter()).write(svg_img_bytes)
-        self.image(svg_img_bytes, x=115, y=self.l_margin + 3 + 35, w=82, h=12.5)
+        w_options = {
+            "module_width": 0.3,
+        }
+        Code128(self.key_mdfe, writer=SVGWriter()).write(
+            fp=svg_img_bytes,
+            options=w_options,
+            text="",
+        )
+        self.image(svg_img_bytes, x=108, y=self.t_margin + 34, w=88.18, h=17.0)
 
         self.set_font(self.default_font, "", 6.5)
         self.set_xy(x=x_middle + 6, y=y_middle + 23)

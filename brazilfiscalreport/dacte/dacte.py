@@ -512,11 +512,9 @@ class Dacte(xFPDF):
         qr_code = extract_text(self.inf_cte_supl, "qrCodCTe")
         x_offset = 88  # Ajuste se necessário
         y_offset = 32  # Ajuste se necessário
-        width = 40
-        height = 40
 
         # Chamada correta para o método
-        draw_qr_code(self, qr_code, y_margin_ret, x_offset, y_offset, width, height)
+        draw_qr_code(self, qr_code, y_margin_ret, x_offset, y_offset, box_size=38)
 
     def _draw_recipient_sender(self, config):
         self.mun_ini = extract_text(self.ide, "xMunIni")
