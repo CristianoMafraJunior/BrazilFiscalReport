@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://github.com/Engenere/BrazilFiscalReport/using_python_code/">
       
       
-        <link rel="prev" href="../dacte/">
+        <link rel="prev" href="../damdfe/">
       
       
         <link rel="next" href="../about/">
@@ -245,6 +245,23 @@
         
   
   
+  
+    <li class="md-tabs__item">
+      <a href="../damdfe/" class="md-tabs__link">
+        
+  
+    
+  
+  DAMDFE
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
     
   
   
@@ -394,6 +411,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../damdfe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DAMDFE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -464,6 +501,15 @@
   <a href="#dacte" class="md-nav__link">
     <span class="md-ellipsis">
       DACTE 📜
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damdfe" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAMDFE 📜
     </span>
   </a>
   
@@ -545,6 +591,15 @@
   <a href="#dacte" class="md-nav__link">
     <span class="md-ellipsis">
       DACTE 📜
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damdfe" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAMDFE 📜
     </span>
   </a>
   
@@ -641,6 +696,22 @@ config = DacteConfig(
 # Use this config when creating a Dacte instance
 dacte = Dacte(xml_content, config=config)
 dacte.output('output_dacte.pdf')
+</code></pre>
+<h2 id="damdfe">DAMDFE 📜</h2>
+<pre><code class="language-python">from brazilfiscalreport.damdfe import Damdfe
+
+# Path to the XML file
+xml_file_path = 'damdfe.xml'
+
+# Load XML Content
+with open(xml_file_path, &quot;r&quot;, encoding=&quot;utf8&quot;) as file:
+    xml_content = file.read()
+
+# Instantiate the DAMDFE object with the loaded XML content
+damdfe = Damdfe(xml=xml_content)
+
+# Save the generated PDF to a file
+damdfe.output('damdfe.pdf')
 </code></pre>
 
 

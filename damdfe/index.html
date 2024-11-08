@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/Engenere/BrazilFiscalReport/dacte/">
+        <link rel="canonical" href="https://github.com/Engenere/BrazilFiscalReport/damdfe/">
       
       
-        <link rel="prev" href="../danfe/">
+        <link rel="prev" href="../dacte/">
       
       
-        <link rel="next" href="../damdfe/">
+        <link rel="next" href="../using_python_code/">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>DACTE - BrazilFiscalReport</title>
+        <title>DAMDFE - BrazilFiscalReport</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#customizing-dacte" class="md-skip">
+        <a href="#customizing-damdfe" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DACTE
+              DAMDFE
             
           </span>
         </div>
@@ -228,11 +228,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../dacte/" class="md-tabs__link">
         
   
     
@@ -247,9 +245,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../damdfe/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -391,6 +391,26 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../dacte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DACTE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -405,7 +425,7 @@
           
   
   <span class="md-ellipsis">
-    DACTE
+    DAMDFE
   </span>
   
 
@@ -416,7 +436,7 @@
         
   
   <span class="md-ellipsis">
-    DACTE
+    DAMDFE
   </span>
   
 
@@ -436,13 +456,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#customizing-dacte" class="md-nav__link">
+  <a href="#customizing-damdfe" class="md-nav__link">
     <span class="md-ellipsis">
-      Customizing DACTE 🎨
+      Customizing DAMDFE 🎨
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Customizing DACTE 🎨">
+    <nav class="md-nav" aria-label="Customizing DAMDFE 🎨">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -472,26 +492,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../damdfe/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    DAMDFE
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -561,13 +561,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#customizing-dacte" class="md-nav__link">
+  <a href="#customizing-damdfe" class="md-nav__link">
     <span class="md-ellipsis">
-      Customizing DACTE 🎨
+      Customizing DAMDFE 🎨
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Customizing DACTE 🎨">
+    <nav class="md-nav" aria-label="Customizing DAMDFE 🎨">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -608,12 +608,12 @@
                   
 
 
-  <h1>DACTE</h1>
+  <h1>DAMDFE</h1>
 
-<h2 id="customizing-dacte">Customizing DACTE 🎨</h2>
-<p>This section describes how to customize the PDF output of the DACTE using the <code>DacteConfig</code> class. You can adjust various settings such as margins, fonts, and tax configurations according to your needs.</p>
+<h2 id="customizing-damdfe">Customizing DAMDFE 🎨</h2>
+<p>This section describes how to customize the PDF output of the DAMDFE using the <code>DamdfeConfig</code> class. You can adjust various settings such as margins, fonts, and tax configurations according to your needs.</p>
 <h3 id="configuration-options">Configuration Options ⚙️</h3>
-<p>Here is a breakdown of all the configuration options available in <code>DacteConfig</code>:</p>
+<p>Here is a breakdown of all the configuration options available in <code>DamdfeConfig</code>:</p>
 <hr />
 <p><strong>Logo</strong></p>
 <ul>
@@ -632,7 +632,7 @@
 <li><strong>Description</strong>: Sets the page margins for the PDF document.</li>
 <li><strong>Example</strong>:
     <code>python
-    config.margins = Margins(top=5, right=5, bottom=5, left=5)</code></li>
+    config.margins = Margins(top=10, right=10, bottom=10, left=10)</code></li>
 <li><strong>Default</strong>: top, right, bottom, and left are set to 5 mm.</li>
 </ul>
 <hr />
@@ -647,43 +647,32 @@
 <li><strong>Default</strong>: <code>TIMES</code></li>
 </ul>
 <hr />
-<p><strong>Display PIS COFINS</strong></p>
-<ul>
-<li><strong>Type</strong>: <code>Bool</code></li>
-<li><strong>Values</strong>: <code>True</code>, <code>False</code></li>
-<li><strong>Description</strong>: Whether or not to display PIS and COFINS taxes in the DACTE totals.</li>
-<li><strong>Example</strong>:
-    <code>python
-    config.display_pis_cofins = True</code></li>
-<li><strong>Default</strong>: <code>False</code></li>
-</ul>
-<hr />
 <h3 id="usage-example-with-customization">Usage Example with Customization</h3>
-<p>Here’s how to set up a DacteConfig object with a full set of customizations:</p>
-<pre><code class="language-python">from brazilfiscalreport.dacte import (
-    Dacte,
+<p>Here’s how to set up a DamdfeConfig object with a full set of customizations:</p>
+<pre><code class="language-python">from brazilfiscalreport.damdfe import (
+    Damdfe,
     DacteConfig,
     FontType,
     Margins,
 )
 
 # Path to the XML file
-xml_file_path = 'cte.xml'
+xml_file_path = 'mdf-e.xml'
 
 # Load XML Content
 with open(xml_file_path, &quot;r&quot;, encoding=&quot;utf8&quot;) as file:
     xml_content = file.read()
 
 # Create a configuration instance
-config = DacteConfig(
+config = DamdfeConfig(
     logo='path/to/logo.png',
     margins=Margins(top=10, right=10, bottom=10, left=10),
     font_type=FontType.TIMES
 )
 
-# Use this config when creating a Dacte instance
-dacte = Dacte(xml_content, config=config)
-dacte.output('output_dacte.pdf')
+# Use this config when creating a Damdfe instance
+damdfe = Damdfe(xml_content, config=config)
+damdfe.output('output_dacte.pdf')
 </code></pre>
 
 
