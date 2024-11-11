@@ -14,7 +14,7 @@
         <link rel="prev" href="../dacte/">
       
       
-        <link rel="next" href="../using_python_code/">
+        <link rel="next" href="../dacce/">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -196,12 +196,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../cli_usage/" class="md-tabs__link">
+      <a href="../cli/" class="md-tabs__link">
         
   
     
   
-  CLI Usage
+  CLI
 
       </a>
     </li>
@@ -266,12 +266,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../using_python_code/" class="md-tabs__link">
+      <a href="../dacce/" class="md-tabs__link">
         
   
     
   
-  Using in Python Code
+  DACCe
 
       </a>
     </li>
@@ -354,11 +354,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli_usage/" class="md-nav__link">
+      <a href="../cli/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    CLI Usage
+    CLI
   </span>
   
 
@@ -488,6 +488,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-in-python-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using in Python Code 🐍
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -503,11 +512,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../using_python_code/" class="md-nav__link">
+      <a href="../dacce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Using in Python Code
+    DACCe
   </span>
   
 
@@ -593,6 +602,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-in-python-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using in Python Code 🐍
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -673,6 +691,22 @@ config = DamdfeConfig(
 # Use this config when creating a Damdfe instance
 damdfe = Damdfe(xml_content, config=config)
 damdfe.output('output_dacte.pdf')
+</code></pre>
+<h2 id="using-in-python-code">Using in Python Code 🐍</h2>
+<pre><code class="language-python">from brazilfiscalreport.damdfe import Damdfe
+
+# Path to the XML file
+xml_file_path = 'damdfe.xml'
+
+# Load XML Content
+with open(xml_file_path, &quot;r&quot;, encoding=&quot;utf8&quot;) as file:
+    xml_content = file.read()
+
+# Instantiate the DAMDFE object with the loaded XML content
+damdfe = Damdfe(xml=xml_content)
+
+# Save the generated PDF to a file
+damdfe.output('damdfe.pdf')
 </code></pre>
 
 
