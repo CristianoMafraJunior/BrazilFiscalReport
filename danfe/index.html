@@ -426,15 +426,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration Options ⚙️
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#usage-example-with-customization" class="md-nav__link">
     <span class="md-ellipsis">
       Usage Example with Customization
@@ -471,6 +462,15 @@
   <a href="#command-to-generate-danfe" class="md-nav__link">
     <span class="md-ellipsis">
       Command to generate DANFE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options ⚙️
     </span>
   </a>
   
@@ -604,15 +604,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration Options ⚙️
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#usage-example-with-customization" class="md-nav__link">
     <span class="md-ellipsis">
       Usage Example with Customization
@@ -654,6 +645,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options ⚙️
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -678,6 +678,79 @@
 
 <h2 id="customizing-danfe">Customizing DANFE 🎨</h2>
 <p>This section describes how to customize the PDF output of the DANFE using the <code>DanfeConfig</code> class. You can adjust various settings such as margins, fonts, and tax configurations according to your needs.</p>
+<h3 id="usage-example-with-customization">Usage Example with Customization</h3>
+<p>Here’s how to set up a <code>DanfeConfig</code> object with a full set of customizations::</p>
+<pre><code class="language-python">from brazilfiscalreport.danfe import (
+    Danfe,
+    DanfeConfig,
+    DecimalConfig,
+    FontType,
+    InvoiceDisplay,
+    Margins,
+    ReceiptPosition,
+    TaxConfiguration,
+)
+
+# Path to the XML file
+xml_file_path = 'nfe.xml'
+
+# Load XML Content
+with open(xml_file_path, &quot;r&quot;, encoding=&quot;utf8&quot;) as file:
+    xml_content = file.read()
+
+# Create a configuration instance
+config = DanfeConfig(
+    logo='path/to/logo.png',
+    margins=Margins(top=10, right=10, bottom=10, left=10),
+    receipt_pos=ReceiptPosition.BOTTOM,
+    decimal_config=DecimalConfig(price_precision=2, quantity_precision=2),
+    tax_configuration=TaxConfiguration.ICMS_ST,
+    invoice_display=InvoiceDisplay.FULL_DETAILS,
+    font_type=FontType.TIMES
+)
+
+# Use this config when creating a Danfe instance
+danfe = Danfe(xml_content, config=config)
+danfe.output('output_danfe.pdf')
+</code></pre>
+<h2 id="using-in-python-code">Using in Python Code 🐍</h2>
+<pre><code class="language-python">from brazilfiscalreport.danfe import (
+    Danfe,
+    DanfeConfig,
+    DecimalConfig,
+    FontType,
+    InvoiceDisplay,
+    Margins,
+    ReceiptPosition,
+    TaxConfiguration,
+)
+
+# Path to the XML file
+xml_file_path = 'nfe.xml'
+
+# Load XML Content
+with open(xml_file_path, &quot;r&quot;, encoding=&quot;utf8&quot;) as file:
+    xml_content = file.read()
+
+# Create a configuration instance
+config = DanfeConfig(
+    logo='path/to/logo.png',
+    margins=Margins(top=10, right=10, bottom=10, left=10),
+    receipt_pos=ReceiptPosition.BOTTOM,
+    decimal_config=DecimalConfig(price_precision=2, quantity_precision=2),
+    tax_configuration=TaxConfiguration.ICMS_ST_ONLY,
+    invoice_display=InvoiceDisplay.FULL_DETAILS,
+    font_type=FontType.TIMES
+)
+
+# Use this config when creating a Danfe instance
+danfe = Danfe(xml_content, config=config)
+danfe.output('output_danfe.pdf')
+</code></pre>
+<h2 id="using-in-cli">Using in CLI 💻</h2>
+<h3 id="command-to-generate-danfe">Command to generate DANFE</h3>
+<pre><code>bfrep danfe /path/to/nfe.xml
+</code></pre>
 <h3 id="configuration-options">Configuration Options ⚙️</h3>
 <p>Here is a breakdown of all the configuration options available in <code>DanfeConfig</code>:</p>
 <hr />
@@ -770,79 +843,6 @@
 <li><strong>Default</strong>: <code>False</code></li>
 </ul>
 <hr />
-<h3 id="usage-example-with-customization">Usage Example with Customization</h3>
-<p>Here’s how to set up a <code>DanfeConfig</code> object with a full set of customizations::</p>
-<pre><code class="language-python">from brazilfiscalreport.danfe import (
-    Danfe,
-    DanfeConfig,
-    DecimalConfig,
-    FontType,
-    InvoiceDisplay,
-    Margins,
-    ReceiptPosition,
-    TaxConfiguration,
-)
-
-# Path to the XML file
-xml_file_path = 'nfe.xml'
-
-# Load XML Content
-with open(xml_file_path, &quot;r&quot;, encoding=&quot;utf8&quot;) as file:
-    xml_content = file.read()
-
-# Create a configuration instance
-config = DanfeConfig(
-    logo='path/to/logo.png',
-    margins=Margins(top=10, right=10, bottom=10, left=10),
-    receipt_pos=ReceiptPosition.BOTTOM,
-    decimal_config=DecimalConfig(price_precision=2, quantity_precision=2),
-    tax_configuration=TaxConfiguration.ICMS_ST,
-    invoice_display=InvoiceDisplay.FULL_DETAILS,
-    font_type=FontType.TIMES
-)
-
-# Use this config when creating a Danfe instance
-danfe = Danfe(xml_content, config=config)
-danfe.output('output_danfe.pdf')
-</code></pre>
-<h2 id="using-in-python-code">Using in Python Code 🐍</h2>
-<pre><code class="language-python">from brazilfiscalreport.danfe import (
-    Danfe,
-    DanfeConfig,
-    DecimalConfig,
-    FontType,
-    InvoiceDisplay,
-    Margins,
-    ReceiptPosition,
-    TaxConfiguration,
-)
-
-# Path to the XML file
-xml_file_path = 'nfe.xml'
-
-# Load XML Content
-with open(xml_file_path, &quot;r&quot;, encoding=&quot;utf8&quot;) as file:
-    xml_content = file.read()
-
-# Create a configuration instance
-config = DanfeConfig(
-    logo='path/to/logo.png',
-    margins=Margins(top=10, right=10, bottom=10, left=10),
-    receipt_pos=ReceiptPosition.BOTTOM,
-    decimal_config=DecimalConfig(price_precision=2, quantity_precision=2),
-    tax_configuration=TaxConfiguration.ICMS_ST_ONLY,
-    invoice_display=InvoiceDisplay.FULL_DETAILS,
-    font_type=FontType.TIMES
-)
-
-# Use this config when creating a Danfe instance
-danfe = Danfe(xml_content, config=config)
-danfe.output('output_danfe.pdf')
-</code></pre>
-<h2 id="using-in-cli">Using in CLI 💻</h2>
-<h3 id="command-to-generate-danfe">Command to generate DANFE</h3>
-<pre><code>bfrep danfe /path/to/nfe.xml
-</code></pre>
 
 
 

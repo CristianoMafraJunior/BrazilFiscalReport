@@ -446,15 +446,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration Options ⚙️
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#usage-example-with-customization" class="md-nav__link">
     <span class="md-ellipsis">
       Usage Example with Customization
@@ -483,6 +474,21 @@
       Using in CLI 💻
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Using in CLI 💻">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options ⚙️
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -589,15 +595,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#configuration-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration Options ⚙️
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#usage-example-with-customization" class="md-nav__link">
     <span class="md-ellipsis">
       Usage Example with Customization
@@ -627,6 +624,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Using in CLI 💻">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options ⚙️
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -648,52 +660,6 @@
 
 <h2 id="customizing-dacte">Customizing DACTE 🎨</h2>
 <p>This section describes how to customize the PDF output of the DACTE using the <code>DacteConfig</code> class. You can adjust various settings such as margins, fonts, and tax configurations according to your needs.</p>
-<h3 id="configuration-options">Configuration Options ⚙️</h3>
-<p>Here is a breakdown of all the configuration options available in <code>DacteConfig</code>:</p>
-<hr />
-<p><strong>Logo</strong></p>
-<ul>
-<li><strong>Type</strong>: <code>str</code>, <code>BytesIO</code>, or <code>bytes</code></li>
-<li><strong>Description</strong>: Path to the logo file or binary image data to be included in the PDF. You can use a file path string or pass image data directly.</li>
-<li><strong>Example</strong>:
-    <code>python
-    config.logo = "path/to/logo.jpg"  # Using a file path</code></li>
-<li><strong>Default</strong>: No logo.</li>
-</ul>
-<hr />
-<p><strong>Margins</strong></p>
-<ul>
-<li><strong>Type</strong>: <code>Margins</code></li>
-<li><strong>Fields</strong>: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> (all of type <code>Number</code>)</li>
-<li><strong>Description</strong>: Sets the page margins for the PDF document.</li>
-<li><strong>Example</strong>:
-    <code>python
-    config.margins = Margins(top=5, right=5, bottom=5, left=5)</code></li>
-<li><strong>Default</strong>: top, right, bottom, and left are set to 5 mm.</li>
-</ul>
-<hr />
-<p><strong>Font Type</strong></p>
-<ul>
-<li><strong>Type</strong>: <code>FontType</code> (Enum)</li>
-<li><strong>Values</strong>: <code>COURIER</code>, <code>TIMES</code></li>
-<li><strong>Description</strong>: Font style used throughout the PDF document.</li>
-<li><strong>Example</strong>:
-    <code>python
-    config.font_type = FontType.COURIER</code></li>
-<li><strong>Default</strong>: <code>TIMES</code></li>
-</ul>
-<hr />
-<p><strong>Display PIS COFINS</strong></p>
-<ul>
-<li><strong>Type</strong>: <code>Bool</code></li>
-<li><strong>Values</strong>: <code>True</code>, <code>False</code></li>
-<li><strong>Description</strong>: Whether or not to display PIS and COFINS taxes in the DACTE totals.</li>
-<li><strong>Example</strong>:
-    <code>python
-    config.display_pis_cofins = True</code></li>
-<li><strong>Default</strong>: <code>False</code></li>
-</ul>
-<hr />
 <h3 id="usage-example-with-customization">Usage Example with Customization</h3>
 <p>Here’s how to set up a DacteConfig object with a full set of customizations:</p>
 <pre><code class="language-python">from brazilfiscalreport.dacte import (
@@ -750,6 +716,52 @@ dacte.output('output_dacte.pdf')
 <h2 id="using-in-cli">Using in CLI 💻</h2>
 <pre><code>bfrep dacte /path/to/dacte.xml
 </code></pre>
+<h3 id="configuration-options">Configuration Options ⚙️</h3>
+<p>Here is a breakdown of all the configuration options available in <code>DacteConfig</code>:</p>
+<hr />
+<p><strong>Logo</strong></p>
+<ul>
+<li><strong>Type</strong>: <code>str</code>, <code>BytesIO</code>, or <code>bytes</code></li>
+<li><strong>Description</strong>: Path to the logo file or binary image data to be included in the PDF. You can use a file path string or pass image data directly.</li>
+<li><strong>Example</strong>:
+    <code>python
+    config.logo = "path/to/logo.jpg"  # Using a file path</code></li>
+<li><strong>Default</strong>: No logo.</li>
+</ul>
+<hr />
+<p><strong>Margins</strong></p>
+<ul>
+<li><strong>Type</strong>: <code>Margins</code></li>
+<li><strong>Fields</strong>: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code> (all of type <code>Number</code>)</li>
+<li><strong>Description</strong>: Sets the page margins for the PDF document.</li>
+<li><strong>Example</strong>:
+    <code>python
+    config.margins = Margins(top=5, right=5, bottom=5, left=5)</code></li>
+<li><strong>Default</strong>: top, right, bottom, and left are set to 5 mm.</li>
+</ul>
+<hr />
+<p><strong>Font Type</strong></p>
+<ul>
+<li><strong>Type</strong>: <code>FontType</code> (Enum)</li>
+<li><strong>Values</strong>: <code>COURIER</code>, <code>TIMES</code></li>
+<li><strong>Description</strong>: Font style used throughout the PDF document.</li>
+<li><strong>Example</strong>:
+    <code>python
+    config.font_type = FontType.COURIER</code></li>
+<li><strong>Default</strong>: <code>TIMES</code></li>
+</ul>
+<hr />
+<p><strong>Display PIS COFINS</strong></p>
+<ul>
+<li><strong>Type</strong>: <code>Bool</code></li>
+<li><strong>Values</strong>: <code>True</code>, <code>False</code></li>
+<li><strong>Description</strong>: Whether or not to display PIS and COFINS taxes in the DACTE totals.</li>
+<li><strong>Example</strong>:
+    <code>python
+    config.display_pis_cofins = True</code></li>
+<li><strong>Default</strong>: <code>False</code></li>
+</ul>
+<hr />
 
 
 
