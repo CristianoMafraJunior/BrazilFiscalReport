@@ -12,3 +12,10 @@ TP_AMBIENTE = {
     "1": "PRODUÇÃO",
     "2": "HOMOLOGAÇÃO",
 }
+
+TP_MODAL = {
+    "1": "RODOVIÁRIO",
+    "2": "AÉREO",
+    "3": "AQUAVIÁRIO",
+    "4": "FERROVIÁRIO",
+}
