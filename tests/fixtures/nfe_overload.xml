@@ -85,6 +85,11 @@
                 <cEAN>SEM GTIN</cEAN>
                 <xProd>Flipover</xProd>
                 <NCM>96100000</NCM>
+                <gCred>
+                    <cCredPresumido>SC850065</cCredPresumido>
+                    <pCredPresumido>3.0000</pCredPresumido>
+                    <vCredPresumido>9.60</vCredPresumido>
+                </gCred>
                 <CFOP>5102</CFOP>
                 <uCom>UN</uCom>
                 <qCom>1.0000</qCom>
@@ -139,6 +144,7 @@
                 <cEAN>SEM GTIN</cEAN>
                 <xProd>Flipover</xProd>
                 <NCM>96100000</NCM>
+                <cBenef>SC830015</cBenef>
                 <CFOP>5102</CFOP>
                 <uCom>UN</uCom>
                 <qCom>1.0000</qCom>

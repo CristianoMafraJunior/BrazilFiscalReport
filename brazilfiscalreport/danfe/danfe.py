@@ -297,8 +297,12 @@ class Danfe(xFPDF):
                 )
 
         cbenef = extract_text(prod, "cBenef")
+        ccredpresumido = extract_text(prod, "cCredPresumido")
+
         if cbenef:
             add_infos.append(f"cBenef: {cbenef}")
+        if ccredpresumido:
+            add_infos.append(f"cCredPresumido: {ccredpresumido}")
 
         if self.product_description_config.display_additional_info and inf_ad_prod:
             add_infos.append(inf_ad_prod)
